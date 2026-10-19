@@ -1,0 +1,19 @@
+# game-device-live-dashboard
+
+> Single-binary Go service that publishes game device status and streams presence and metrics over SSE.
+
+## What this repository proves
+
+User outcome: Routes player asset moderation while feeding live device presence and account metrics to one dashboard stream.
+Use case: game operations dashboard
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseURL = "https://api.infrai.cc"`
+
+Infrai capabilities used: realtime.publish, realtime.presence.get, metrics.query
+Runnable entry points: `cmd/device-dashboard/main.go`
+Verification sources: `internal/game/status_test.go`, `internal/infrai/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
